@@ -16,9 +16,19 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.*;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
 
+/*
+ ____    ___      __     ___       __       _______.   .______    _______     _______.___________.   
+|___ \  |__ \    / /    / _ \     |  |     /       |   |   _  \  |   ____|   /       |           |   
+  __) |    ) |  / /_   | (_) |    |  |    |   (----`   |  |_)  | |  |__     |   (----`---|  |----`   
+ |__ <    / /  | '_ \   > _ <     |  |     \   \       |   _  <  |   __|     \   \       |  |        
+ ___) |  / /_  | (_) | | (_) |    |  | .----)   |      |  |_)  | |  |____.----)   |      |  |        
+|____/  |____|  \___/   \___/     |__| |_______/       |______/  |_______|_______/       |__|   
+                               
+*/
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -39,12 +49,14 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		m_oi = new OI();
-		m_chooser.setDefaultOption("Auto",  new ExampleCommand()); 
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		m_oi = new OI(); 
+
 		CameraServer.getInstance().startAutomaticCapture(0);
 		CameraServer.getInstance().startAutomaticCapture(1);
+
+		// Autonomous Initiation & Declaration 
+		m_chooser.addDefault("No Auto", null);
+		m_chooser.addObject("Timed Movement", new TimedMovementAuto());
 	}
 
 	/**
