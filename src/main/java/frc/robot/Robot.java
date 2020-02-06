@@ -13,10 +13,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.*;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
 
@@ -53,10 +50,6 @@ public class Robot extends TimedRobot {
 
 		CameraServer.getInstance().startAutomaticCapture(0);
 		CameraServer.getInstance().startAutomaticCapture(1);
-
-		// Autonomous Initiation & Declaration 
-		m_chooser.addDefault("No Auto", null);
-		m_chooser.addObject("Timed Movement", new TimedMovementAuto());
 	}
 
 	/**
