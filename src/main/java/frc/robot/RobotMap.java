@@ -19,15 +19,11 @@ public class RobotMap {
 	// public static int leftMotor = 1;
     // public static int rightMotor = 2;
     
-    // change #s to specific motors
+    // TODO change #s to specific motors
 	public static final int SPARK_driveLeftFront = 5;
 	public static final int SPARK_driveLeftBack = 4;
-
 	public static final int SPARK_driveRightFront = 1;
 	public static final int SPARK_driveRightBack = 0;
-	
-	public static final int SPARK_ballIntakeMotor = 3;
-	public static final int SPARK_ballShootingMotor = 4;
 	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:

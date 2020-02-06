@@ -7,7 +7,7 @@
 
 package frc.robot.subsystems;
 import frc.robot.RobotMap;
-import frc.robot.commands.ArcadeDriveCommand;
+import frc.robot.commands.drive.ArcadeDriveCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -42,13 +42,17 @@ public class DriveTrainSubsystem extends Subsystem {
 		driveRight.setInverted(true);
 		drive = new DifferentialDrive(driveLeft, driveRight);
 	}
+
 	public void SwapControls()
 	{
 		driveLeft.setInverted(!(driveLeft.getInverted()));
-		driveRight.setInverted(!(driveRight.getInverted()));
-		
+		driveRight.setInverted(!(driveRight.getInverted()));	
 	}
+
+	/*
 	public void arcadeDrive(Joystick joy) {	
+		
+		/*
 		if( invert == true )
 		{
 			driveLeft.setInverted(false);
@@ -59,23 +63,23 @@ public class DriveTrainSubsystem extends Subsystem {
 			driveLeft.setInverted(true);
 			driveRight.setInverted(true);	
 		}
+		
+
 		drive.arcadeDrive(-joy.getRawAxis(1) * 0.75, 	
 						-joy.getRawAxis(0) * 0.75);
-
-
 	}
+	*/
+
 	public void arcadeDriveInv(Joystick joy) {	
 	}
-	public void arcadeDrive(double xSpeed) {	
-		drive.arcadeDrive(xSpeed, 0);
-	}
-	/**
-	 * Tank drive using individual joystick axes.
-	 *
-	 * @param leftAxis  Left sides value
-	 * @param rightAxis Right sides value
-	 */
 
+	public void arcadeDrive(double xSpeed, double zRotation) {	
+		drive.arcadeDrive(xSpeed, zRotation);
+	}
+
+	// Drive with arcade drive.
+    // That means that the Y axis drives forward
+    // and backward, and the X turns left and right.
 	public void stop() {
 		drive.stopMotor();
 	}
