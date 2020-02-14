@@ -30,8 +30,8 @@ public class ArcadeDriveCommand extends Command {
 	@Override
 	protected void execute() {
 		// TODO find axes using controller and DriverStation
-		Robot.driveTrain.arcadeDrive(OI.stick.getRawAxis(0), OI.stick.getRawAxis(0));
-	}
+		Robot.driveTrain.arcadeDrive(OI.stick.getRawAxis(0), OI.stick.getRawAxis(1));
+	}	
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
