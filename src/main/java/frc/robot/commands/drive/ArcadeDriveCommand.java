@@ -29,8 +29,10 @@ public class ArcadeDriveCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		// TODO find axes using controller and DriverStation
-		Robot.driveTrain.arcadeDrive(OI.stick.getRawAxis(0), OI.stick.getRawAxis(0));
+		// TODO find axes using controller and DriverStation 	power + turning
+		double xSpeed = OI.stick.getY();
+		double zRotation = OI.stick.getX();
+		Robot.driveTrain.arcadeDrive(xSpeed, zRotation);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

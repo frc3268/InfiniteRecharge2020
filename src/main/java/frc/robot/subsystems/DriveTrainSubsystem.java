@@ -51,8 +51,6 @@ public class DriveTrainSubsystem extends Subsystem {
 
 	/*
 	public void arcadeDrive(Joystick joy) {	
-		
-		/*
 		if( invert == true )
 		{
 			driveLeft.setInverted(false);

@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.autonomous.TimedMovement;
+import frc.robot.commands.drive.ArcadeDriveCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
@@ -37,6 +38,8 @@ import frc.robot.subsystems.DriveTrainSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
+	private ArcadeDriveCommand arcadeDriveCommand;
+
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
 	public static OI m_oi;
 
@@ -109,6 +112,9 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
+		arcadeDriveCommand = new ArcadeDriveCommand();
+		arcadeDriveCommand.start();
+
 		// This makes sure that the autonomous stops running when
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
@@ -124,18 +130,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		//	If the second button on the controller is pressed, swap the main camera
-		// if(OI.rightStick.getRawButton(2))
-		// {
-		// 	// if(CameraServer.getInstance().getServer().getSource() == FrontCam)
-		// 	// {
-		// 	// 	CameraServer.getInstance().getServer().setSource(BackCam);
-		// 	// }
-		// 	// else if(CameraServer.getInstance().getServer().getSource() == BackCam)
-		// 	// {
-		// 	// 	CameraServer.getInstance().getServer().setSource(FrontCam);
-		// 	// }
-		// }
 	}
 
 	/**
