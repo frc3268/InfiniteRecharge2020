@@ -33,11 +33,11 @@ public class DriveTrainSubsystem extends Subsystem {
 	// here. Call these from Commands.
 	public DriveTrainSubsystem() {
 		driveLeftFront = new Spark(RobotMap.SPARK_driveLeftFront);
-		driveLeftBack = new Spark(RobotMap.SPARK_driveLeftBack);
+		//driveLeftBack = new Spark(RobotMap.SPARK_driveLeftBack); //this was commented out, because driveLeftFront already has port 0. this otherwise throws an error
 		driveRightFront = new Spark(RobotMap.SPARK_driveRightFront);
-		driveRightBack = new Spark(RobotMap.SPARK_driveRightBack);
-		driveLeft = new SpeedControllerGroup(driveLeftFront, driveLeftBack);
-		driveRight = new SpeedControllerGroup(driveRightFront, driveRightBack);
+		//driveRightBack = new Spark(RobotMap.SPARK_driveRightBack); //same as above
+		driveLeft = new SpeedControllerGroup(driveLeftFront); //, driveLeftBack); //same as above
+		driveRight = new SpeedControllerGroup(driveRightFront); //, driveRightBack); //same as above
 		driveLeft.setInverted(true);
 		driveRight.setInverted(true);
 		drive = new DifferentialDrive(driveLeft, driveRight);

@@ -20,8 +20,8 @@ public class RobotMap {
     // public static int rightMotor = 2;
     
     // TODO change #s to specific motors
-	public static final int SPARK_driveLeftFront = 2;
-	public static final int SPARK_driveLeftBack = 2;
+	public static final int SPARK_driveLeftFront = 0;
+	public static final int SPARK_driveLeftBack = 0;
 	public static final int SPARK_driveRightFront = 9;
 	public static final int SPARK_driveRightBack = 9;
 
