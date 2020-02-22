@@ -14,10 +14,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.ShooterCommand;
 import frc.robot.commands.TiltShooterCommand;
 import frc.robot.commands.autonomous.TimedMovement;
 import frc.robot.commands.drive.ArcadeDriveCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
+import frc.robot.subsystems.ShooterAngleSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
 
@@ -39,9 +42,14 @@ import frc.robot.subsystems.DriveTrainSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
-	private ArcadeDriveCommand arcadeDriveCommand;
-
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
+	private ArcadeDriveCommand arcadeDrive_command;
+
+	public static ShooterAngleSubsystem tilt = new ShooterAngleSubsystem();
+	private TiltShooterCommand tilt_command;
+
+	public static ShooterSubsystem shoot = new ShooterSubsystem();
+	private ShooterCommand shoot_command;
 	public static OI m_oi;
 
 	Command m_autoCommand;
@@ -72,9 +80,7 @@ public class Robot extends TimedRobot {
 	 * the robot is disabled.
 	 */ 
 	@Override
-	public void disabledInit() {
-
-	}
+	public void disabledInit() { }
 
 	@Override
 	public void disabledPeriodic() {
@@ -113,11 +119,14 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		arcadeDriveCommand = new ArcadeDriveCommand();
-		arcadeDriveCommand.start();
-		//when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
-		TiltShooterCommand tilt_command = new TiltShooterCommand();
+		arcadeDrive_command = new ArcadeDriveCommand();
+		tilt_command = new TiltShooterCommand();
+		shoot_command = new ShooterCommand();
+		arcadeDrive_command.start();
 		tilt_command.start();
+		shoot_command.start();
+		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
+
 
 		// This makes sure that the autonomous stops running when
 		// teleop starts running. If you want the autonomous to

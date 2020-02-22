@@ -9,7 +9,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.ShooterAngleSubsystem;
+
 import frc.robot.OI;
+import frc.robot.Robot;
 
 /**
  * An example command.  You can replace me with your own command.
@@ -19,8 +21,8 @@ public class TiltShooterCommand extends Command {
   ShooterAngleSubsystem angler = new ShooterAngleSubsystem();
 
   public TiltShooterCommand() {
-    // Use requires() here to declare subsystem dependencies
-   // requires(Robot.m_subsystem);
+   	// Use requires() here to declare subsystem dependencies
+		requires(Robot.tilt);
   }
 
   // Called just before this Command runs the first time
@@ -46,6 +48,7 @@ public class TiltShooterCommand extends Command {
     
 
     //if slider in middle, transmit zero, if up transmit low, if down transmit high.
+    // TODO Make this set to values and work with the buttons on the top of the stick (slider shouldn't define speed)
     if (slider < 40) {
       angler.setSpeed(slider);
     } else if (slider > 60) {
@@ -62,6 +65,7 @@ public class TiltShooterCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.tilt.stop();
   }
 
   // Called when another command which requires one or more of the same

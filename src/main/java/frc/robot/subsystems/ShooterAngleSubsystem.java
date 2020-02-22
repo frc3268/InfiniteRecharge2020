@@ -19,11 +19,12 @@ public class ShooterAngleSubsystem extends Subsystem {
   SpeedControllerGroup ControllerGroup_angleShooter;
 
   public ShooterAngleSubsystem() {
-    Talon_angleShooter= new Talon (RobotMap.PWM_shooterAngle);
-    ControllerGroup_angleShooter= new SpeedControllerGroup(Talon_angleShooter);
+    Talon_angleShooter = new Talon(RobotMap.PWM_shooterAngle);
+    ControllerGroup_angleShooter = new SpeedControllerGroup(Talon_angleShooter);
   }
 
   public void setSpeed(double speed) {
+    System.out.println(speed);
     ControllerGroup_angleShooter.set(speed);
   }
 
@@ -31,5 +32,9 @@ public class ShooterAngleSubsystem extends Subsystem {
   public void initDefaultCommand() {
     // change if needed from null
     setDefaultCommand(null);
+  }
+
+  public void stop() {
+    // TODO Feed() must be called in at a much lower level of abstraction
   }
 }

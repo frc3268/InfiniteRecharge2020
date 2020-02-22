@@ -68,7 +68,7 @@ public class DriveTrainSubsystem extends Subsystem {
 	}
 	*/
 
-	public void arcadeDriveInv(Joystick joy) {	
+	public void arcadeDriveInv(Joystick joy/*ful*/) {	
 	}
 
 	public void arcadeDrive(double xSpeed, double zRotation) {	

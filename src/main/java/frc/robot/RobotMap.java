@@ -27,10 +27,9 @@ public class RobotMap {
 
 	public static final int PWM_shooterAngle = 3;
 
-	public static final int CAM_shooterTopMotor = 0; // change names
-	public static final int CAM_shooterBottom = 1; // change names
-
-	
+	public static final int VICTORSPX_shooterRight = 0;
+	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
+	public static final int VICTORSPX_shooterLeft = 1;
 
 	
 	// If you are using multiple modules, make sure to define both the port
