@@ -30,7 +30,7 @@ public class TiltShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double slider = OI.stick.getRawAxis(3);
+    double slider = OI.TiltShooterSlider;
 
     //this block was to use buttons to 
     // boolean tilt_up = OI.stick.getRawButton(8);
