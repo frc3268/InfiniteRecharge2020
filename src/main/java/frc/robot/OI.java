@@ -28,10 +28,10 @@ public class OI {
 
 	public static Joystick stick = new Joystick(0);
 
-	public static Button BallShootingButton = new JoystickButton(stick, RobotMap.ballShootingButton); 
+	public static boolean BallShootingButton = stick.getRawButton(1);
+	public static boolean BallShootingButton2 = stick.getRawButton(2);
 
-	public static Button TiltShooterSlider = new JoystickButton(stick, RobotMap.tiltShooterButton);
-
+	public static double TiltShooterSlider = stick.getRawAxis(3);
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
