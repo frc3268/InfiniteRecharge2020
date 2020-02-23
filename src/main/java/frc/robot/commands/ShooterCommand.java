@@ -29,10 +29,12 @@ public class ShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean button = OI.stick.getRawButton(1);
-    if (button) {
+    boolean trigger = OI.stick.getRawButton(1);
+    if (trigger) {
       Robot.shoot.shoot(0.5);
-    } else {
+    }
+    boolean thumb = OI.stick.getRawButton(2);
+    if (thumb) {
       Robot.shoot.shoot(0);
     }
   }
