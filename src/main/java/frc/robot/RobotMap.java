@@ -31,7 +31,11 @@ public class RobotMap {
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
 	public static final int VICTORSPX_shooterLeft = 1;
 
-	
+	// declare buttons
+	public static final int ballShootingButton = 1;
+
+	public static final int tiltShooterButton = 3;
+
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;

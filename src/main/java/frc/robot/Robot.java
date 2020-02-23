@@ -14,8 +14,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.ShooterCommand;
-import frc.robot.commands.TiltShooterCommand;
+import frc.robot.commands.shooter.ShooterCommand;
+import frc.robot.commands.shooter.TiltShooterCommand;
 import frc.robot.commands.autonomous.TimedMovement;
 import frc.robot.commands.drive.ArcadeDriveCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -120,10 +120,10 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 		arcadeDrive_command = new ArcadeDriveCommand();
-		tilt_command = new TiltShooterCommand();
+		//tilt_command = new TiltShooterCommand();
 		shoot_command = new ShooterCommand();
 		arcadeDrive_command.start();
-		tilt_command.start();
+		//tilt_command.start();
 		shoot_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
 

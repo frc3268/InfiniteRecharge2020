@@ -28,7 +28,7 @@ public class OI {
 
 	public static Joystick stick = new Joystick(0);
 
-	public static Button BallShootingButton = new JoystickButton(stick, RobotMap.ballShootButton); 
+	public static Button BallShootingButton = new JoystickButton(stick, RobotMap.ballShootingButton); 
 
 	public static Button TiltShooterSlider = new JoystickButton(stick, RobotMap.tiltShooterButton);
 
