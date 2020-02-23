@@ -8,6 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import frc.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -23,6 +27,11 @@ public class OI {
 	// Button button = new JoystickButton(stick, buttonNumber);
 
 	public static Joystick stick = new Joystick(0);
+
+	public static Button BallShootingButton = new JoystickButton(stick, RobotMap.ballShootButton); 
+
+	public static Button TiltShooterSlider = new JoystickButton(stick, RobotMap.tiltShooterButton);
+
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
