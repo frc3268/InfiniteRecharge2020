@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+// import jdk.javadoc.internal.doclets.formats.html.resources.standard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,8 +24,14 @@ public class OI {
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
 
-	public static Joystick stick = new Joystick(0);
+	public static Joystick stick = new Joystick(RobotMap.JOYSTICK_PORT);
 
+	public static JoystickButton trigger = new JoystickButton(stick, RobotMap.TRIGGER_BUTTON_ID);
+	public static JoystickButton thumbPickUp = new JoystickButton(stick, RobotMap.THUMB_BUTTON_ID);
+	public static JoystickButton stickDown = new JoystickButton(stick, RobotMap.STICK_LEFT_UPPER_BUTTON_ID);
+	public static JoystickButton stickUp = new JoystickButton(stick, RobotMap.STICK_LEFT_LOWER_BUTTON_ID);
+
+	public OI() { }
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
 	// commands the same as any other Button.
@@ -43,7 +51,4 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
-	public OI() {
-
-	}
 }
