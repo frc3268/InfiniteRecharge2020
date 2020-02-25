@@ -29,10 +29,14 @@ public class ShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean button = OI.stick.getRawButton(1);
-    if (button) {
+    // get if the trigger is pressed
+    boolean triggerPressed = OI.stick.getRawButton(1);
+    // Check if the trigger is pressed
+    if (triggerPressed) {
+      // Fire/continue to fire the shooter if the trigger is pressed
       Robot.shoot.shoot(0.5);
     } else {
+      // Stop firing the shooter if the trigger is not pressed
       Robot.shoot.shoot(0);
     }
   }

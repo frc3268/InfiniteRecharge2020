@@ -21,6 +21,7 @@ import frc.robot.commands.drive.ArcadeDriveCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.ShooterAngleSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
+//import sun.swing.PrintColorUIResource;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
 
@@ -30,8 +31,8 @@ import frc.robot.subsystems.ShooterSubsystem;
   __) |    ) |  / /_   | (_) |    |  |    |   (----`   |  |_)  | |  |__     |   (----`---|  |----`   
  |__ <    / /  | '_ \   > _ <     |  |     \   \       |   _  <  |   __|     \   \       |  |        
  ___) |  / /_  | (_) | | (_) |    |  | .----)   |      |  |_)  | |  |____.----)   |      |  |        
-|____/  |____|  \___/   \___/     |__| |_______/       |______/  |_______|_______/       |__|   
-                               
+|____/  |____|  \___/   \___/     |__| |_______/       |______/  |_______|_______/       |__|                 
+              
 */
 
 /**
@@ -42,6 +43,7 @@ import frc.robot.subsystems.ShooterSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
+	
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
 	private ArcadeDriveCommand arcadeDrive_command;
 
@@ -50,6 +52,7 @@ public class Robot extends TimedRobot {
 
 	public static ShooterSubsystem shoot = new ShooterSubsystem();
 	private ShooterCommand shoot_command;
+
 	public static OI m_oi;
 
 	Command m_autoCommand;
@@ -126,7 +129,7 @@ public class Robot extends TimedRobot {
 		//tilt_command.start();
 		shoot_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
-
+		
 
 		// This makes sure that the autonomous stops running when
 		// teleop starts running. If you want the autonomous to
@@ -134,7 +137,9 @@ public class Robot extends TimedRobot {
 		// this line or comment it out.
 		if (m_autoCommand != null) {
 			m_autoCommand.cancel();
+			System.out.println("auto killed");
 		}
+		System.out.println("Teleop init complete");
 	}
 
 	/**

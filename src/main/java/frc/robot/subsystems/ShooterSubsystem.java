@@ -19,21 +19,23 @@ public class ShooterSubsystem extends Subsystem {
   WPI_VictorSPX victorShooter_l;
   WPI_VictorSPX victorShooter_r;
 
-  /**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
-  private final double L__PERCENT_OFFSET = 1;
-  /**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
-  private final double R__PERCENT_OFFSET = 1;
-
   public ShooterSubsystem() {
     victorShooter_r = new WPI_VictorSPX(RobotMap.VICTORSPX_shooterRight);
     victorShooter_l = new WPI_VictorSPX(RobotMap.VICTORSPX_shooterLeft);
   }
 
+/**
+ * Shoots with a speed value between 0 and 1 (inlcudes 0). Has a percent offset for each motor, defined in RobotMap.java. This doesn't use PID and will hopefully become a legacy function.
+ */
   public void shoot(double speed) {
-    System.out.println("Shooting... [" + speed + "," + L__PERCENT_OFFSET + "," + R__PERCENT_OFFSET + "]");
+    System.out.println("Shooting... [ " + RobotMap.L__PERCENT_OFFSET + ", " + RobotMap.R__PERCENT_OFFSET + " ]:::[ " + speed + " ]");
     victorShooter_l.setInverted(true);
-    victorShooter_l.set(speed * L__PERCENT_OFFSET);
-    victorShooter_r.set(speed * R__PERCENT_OFFSET);
+    victorShooter_l.set(speed * RobotMap.L__PERCENT_OFFSET);
+    victorShooter_r.set(speed * RobotMap.R__PERCENT_OFFSET);
+  }
+
+  public void accraShoot(double speed) {
+    // PID shoot function will go here
   }
 
   @Override
