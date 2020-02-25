@@ -27,11 +27,14 @@ public class OI {
 	// Button button = new JoystickButton(stick, buttonNumber);
 
 	public static Joystick stick = new Joystick(0);
+	public static Joystick controller = new Joystick(1);
 
-	public static boolean BallShootingButton = stick.getRawButton(1);
-	public static boolean BallShootingButton2 = stick.getRawButton(2);
+	public static boolean triggerButton = stick.getRawButton(1);
+	public static boolean thumbButton = stick.getRawButton(2);
 
 	public static double TiltShooterSlider = stick.getRawAxis(3);
+	// public static double TiltShooterSlider = stick.getTwist();
+	// public static double TiltShooterSlider = stick.getThrottle();
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to

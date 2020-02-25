@@ -29,11 +29,11 @@ public class ShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean trigger = OI.BallShootingButton;
+    boolean trigger = OI.triggerButton;
     if (trigger) {
       Robot.shoot.shoot(0.5);
     }
-    boolean thumb = OI.BallShootingButton2;
+    boolean thumb = OI.thumbButton;
     if (thumb) {
       Robot.shoot.shoot(0);
     }
