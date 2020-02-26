@@ -31,6 +31,9 @@ public class RobotMap {
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
 	public static final int VICTORSPX_shooterLeft = 1;
 
+	public static final int VICTORSPX_ballIntake = 2;
+	public static final int VICTORSPX_ballLoad = 3;
+
 	// declare buttons
 	public static final int ballShootingButton = 1;
 
