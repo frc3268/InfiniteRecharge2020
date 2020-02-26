@@ -14,13 +14,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.shooter.ShooterCommand;
-import frc.robot.commands.shooter.TiltShooterCommand;
+import frc.robot.commands.shooter.*;
+// import frc.robot.commands.shooter.TiltShooterCommand;
 import frc.robot.commands.autonomous.TimedMovement;
 import frc.robot.commands.drive.ArcadeDriveCommand;
-import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.subsystems.ShooterAngleSubsystem;
-import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.subsystems.*;
+// import frc.robot.subsystems.DriveTrainSubsystem;
+// import frc.robot.subsystems.ShooterAngleSubsystem;
+// import frc.robot.subsystems.ShooterSubsystem;
 
 //import frc.robot.subsystems.BallShootingSubSystem;
 
@@ -50,6 +51,13 @@ public class Robot extends TimedRobot {
 
 	public static ShooterSubsystem shoot = new ShooterSubsystem();
 	private ShooterCommand shoot_command;
+
+	public static BallIntakeSubsystem intake = new BallIntakeSubsystem();
+	private IntakeCommand intake_command;
+
+	public static BallLoadSubsystem load = new BallLoadSubsystem();
+	private LoadCommand load_command;
+
 	public static OI m_oi;
 
 	Command m_autoCommand;

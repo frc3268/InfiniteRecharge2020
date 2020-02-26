@@ -17,6 +17,9 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 public class BallIntakeSubsystem extends Subsystem {
   WPI_VictorSPX victorBallIntake; 
 
+  // TODO: test to find if offsets are needed
+  // private final double PERCENT_OFFSET = 1;
+
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 

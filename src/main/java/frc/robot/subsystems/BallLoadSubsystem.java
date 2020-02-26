@@ -14,8 +14,11 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class BallIntakeSubsystem extends Subsystem {
+public class BallLoadSubsystem extends Subsystem {
   WPI_VictorSPX victorBallLoad; 
+
+  // TODO: test to find if offsets are needed
+  // private final double PERCENT_OFFSET = 1;
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
@@ -27,7 +30,7 @@ public class BallIntakeSubsystem extends Subsystem {
     // victorBallLoad.setInverted(true);
   }
 
-  public void intake(double speed) {
+  public void load(double speed) {
     victorBallLoad.set(speed);
   }
 
