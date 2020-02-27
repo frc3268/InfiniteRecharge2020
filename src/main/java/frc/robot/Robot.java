@@ -123,10 +123,10 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 		arcadeDrive_command = new ArcadeDriveCommand();
-		//tilt_command = new TiltShooterCommand();
+		tilt_command = new TiltShooterCommand();
 		shoot_command = new ShooterCommand();
 		arcadeDrive_command.start();
-		//tilt_command.start();
+		tilt_command.start();
 		shoot_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
 		

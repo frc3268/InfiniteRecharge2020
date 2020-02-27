@@ -8,10 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import frc.robot.commands.*;
+//import frc.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -26,20 +24,14 @@ public class OI {
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
 
-	public static Joystick stick = new Joystick(0);
-	public static Joystick controller = new Joystick(1);
+	public static Joystick stick = new Joystick(RobotMap.JOYSTICK_PORT);
+	public static Joystick controller = new Joystick(RobotMap.CONTROLLER_PORT);
 
-	public static boolean triggerButton = stick.getRawButton(1);
-	public static boolean thumbButton = stick.getRawButton(2);
+	public static boolean triggerButton = stick.getRawButton(RobotMap.TRIGGER_BUTTON_ID);
+	public static boolean thumbButton = stick.getRawButton(RobotMap.THUMB_BUTTON_ID);
 
-	public static double TiltShooterSlider = stick.getRawAxis(3);
-	// public static double TiltShooterSlider = stick.getTwist();
-	// public static double TiltShooterSlider = stick.getThrottle();
-
-	public static JoystickButton trigger = new JoystickButton(stick, RobotMap.TRIGGER_BUTTON_ID);
-	public static JoystickButton thumbPickUp = new JoystickButton(stick, RobotMap.THUMB_BUTTON_ID);
-	public static JoystickButton stickDown = new JoystickButton(stick, RobotMap.STICK_LEFT_UPPER_BUTTON_ID);
-	public static JoystickButton stickUp = new JoystickButton(stick, RobotMap.STICK_LEFT_LOWER_BUTTON_ID);
+	public static boolean tiltUpButton = stick.getRawButton(RobotMap.STICK_LEFT_UPPER_BUTTON_ID);
+	public static boolean tiltDownButton = stick.getRawButton(RobotMap.STICK_LEFT_LOWER_BUTTON_ID);
 
 	public OI() { }
 	// There are a few additional built in buttons you can use. Additionally,

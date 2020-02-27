@@ -30,13 +30,15 @@ public class ShooterCommand extends Command {
   @Override
   protected void execute() {
     boolean trigger = OI.triggerButton;
+
     if (trigger) {
       Robot.shoot.shoot(0.5);
     }
-    boolean thumb = OI.thumbButton;
-    if (thumb) {
+    if (!trigger) {
       Robot.shoot.shoot(0);
     }
+
+    // TODO Presets for the control wheel twisting/operation/interfacing (idk what it's called)
   }
 
   // Make this return true when this Command no longer needs to run execute()

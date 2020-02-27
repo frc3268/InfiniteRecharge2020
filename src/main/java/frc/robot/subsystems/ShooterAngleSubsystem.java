@@ -35,6 +35,5 @@ public class ShooterAngleSubsystem extends Subsystem {
   }
 
   public void stop() {
-    // TODO Feed() must be called in at a much lower level of abstraction
   }
 }

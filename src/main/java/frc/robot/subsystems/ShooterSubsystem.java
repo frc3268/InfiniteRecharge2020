@@ -40,7 +40,6 @@ public class ShooterSubsystem extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    // TODO Figure out what should go here
     setDefaultCommand(null);
   }
 }

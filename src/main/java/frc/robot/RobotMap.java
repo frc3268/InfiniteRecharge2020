@@ -18,7 +18,8 @@ public class RobotMap {
     //////////////////////////////////////////////////////////////////////////////////////////
 	// --------------------------------------- OI ----------------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
-	public static final int JOYSTICK_PORT = 0; 
+	public static final int JOYSTICK_PORT = 0;
+	public static final int CONTROLLER_PORT = 1;
 	public static final int TRIGGER_BUTTON_ID = 1;
 	public static final int THUMB_BUTTON_ID = 2;
 	public static final int STICK_LEFT_UPPER_BUTTON_ID = 3;
@@ -38,19 +39,18 @@ public class RobotMap {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// ------------------------------------ SHOOTING -------------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
-	public static final int VICTORSPX_shooterRight = 0; 
-	/* VICTORSPX_shooterRight refers to the shooter 
-	   with the '3' Sticker on it */
+	public static final int VICTORSPX_shooterRight = 0;
+	/* VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it */
 	public static final int VICTORSPX_shooterLeft = 1;
+
+
 	/**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
 	public static final double L__PERCENT_OFFSET = 1;
 	/**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
 	public static final double R__PERCENT_OFFSET = 1;
 	
-
 	// declare buttons
 	public static final int ballShootingButton = 1;
-
 	public static final int tiltShooterButton = 3;
 
 	// If you are using multiple modules, make sure to define both the port

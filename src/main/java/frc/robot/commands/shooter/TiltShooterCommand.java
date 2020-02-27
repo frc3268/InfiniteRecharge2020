@@ -30,27 +30,22 @@ public class TiltShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double slider = OI.TiltShooterSlider;
+    // tiltUpButton rasies the hopper, tiltDownButton lowers the hopper
+    // Create presets here for the speed and timing so we can automate the process of going from one mode to the other
+    // TODO testing for that ^
+    boolean up = OI.tiltUpButton;
+    boolean down = OI.tiltDownButton;
+    double speed = 1;
 
-    //this block was to use buttons to 
-    // boolean tilt_up = OI.stick.getRawButton(8);
-    // boolean tilt_down = OI.stick.getRawButton(7);
-    // double speed = 0;
-
-    // if (tilt_up) {
-    //   angler.setSpeed(speed + 0.05);
-    // } else if (tilt_down) {
-    //   angler.setSpeed(speed - 0.05);
-    // }
-    
-
-    //if slider in middle, transmit zero, if up transmit low, if down transmit high.
-    // TODO Make this set to values and work with the buttons on the top of the stick (slider shouldn't define speed)
-    if (slider < 40) {
-      Robot.tilt.setSpeed(slider);
-    } else if (slider > 60) {
-      Robot.tilt.setSpeed(slider);
+    if (up) {
+      Robot.tilt.setSpeed(speed);
+    } else if (down) {
+      Robot.tilt.setSpeed(speed);
+    } else {
+      Robot.tilt.setSpeed(0);
     }
+
+    // TODO preset for raising the cannon to reach the control wheel/panel
   }
 
   // Make this return true when this Command no longer needs to run execute()
