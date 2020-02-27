@@ -5,20 +5,21 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.commands.shooter;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import frc.robot.OI;
 import frc.robot.Robot;
 
-
 /**
- * -- pop! --
+ * An example command.  You can replace me with your own command.
  */
-public class ShooterCommand extends Command {
-  public ShooterCommand() {
-    // Use requires() here to declare subsystem dependencies
-    requires(Robot.tilt);
+public class TiltShooterCommand extends Command {
+
+  public TiltShooterCommand() {
+   	// Use requires() here to declare subsystem dependencies
+		requires(Robot.tilt);
   }
 
   // Called just before this Command runs the first time
@@ -29,15 +30,26 @@ public class ShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // get if the trigger is pressed
-    boolean triggerPressed = OI.stick.getRawButton(1);
-    // Check if the trigger is pressed
-    if (triggerPressed) {
-      // Fire/continue to fire the shooter if the trigger is pressed
-      Robot.shoot.shoot(0.5);
-    } else {
-      // Stop firing the shooter if the trigger is not pressed
-      Robot.shoot.shoot(0);
+    double slider = OI.TiltShooterSlider;
+
+    //this block was to use buttons to 
+    // boolean tilt_up = OI.stick.getRawButton(8);
+    // boolean tilt_down = OI.stick.getRawButton(7);
+    // double speed = 0;
+
+    // if (tilt_up) {
+    //   angler.setSpeed(speed + 0.05);
+    // } else if (tilt_down) {
+    //   angler.setSpeed(speed - 0.05);
+    // }
+    
+
+    //if slider in middle, transmit zero, if up transmit low, if down transmit high.
+    // TODO Make this set to values and work with the buttons on the top of the stick (slider shouldn't define speed)
+    if (slider < 40) {
+      Robot.tilt.setSpeed(slider);
+    } else if (slider > 60) {
+      Robot.tilt.setSpeed(slider);
     }
   }
 
@@ -50,6 +62,7 @@ public class ShooterCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.tilt.stop();
   }
 
   // Called when another command which requires one or more of the same

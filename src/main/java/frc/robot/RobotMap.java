@@ -47,4 +47,14 @@ public class RobotMap {
 	/**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
 	public static final double R__PERCENT_OFFSET = 1;
 	
+
+	// declare buttons
+	public static final int ballShootingButton = 1;
+
+	public static final int tiltShooterButton = 3;
+
+	// If you are using multiple modules, make sure to define both the port
+	// number and the module. For example you with a rangefinder:
+	// public static int rangefinderPort = 1;
+	// public static int rangefinderModule = 1;
 }
