@@ -30,7 +30,7 @@ public class ArcadeDriveCommand extends Command {
 	@Override
 	protected void execute() {
 		double xSpeed = OI.stick.getY();
-		double zRotation = OI.stick.getX();
+		double zRotation = ((OI.stick.getX()) * -1);// this is inverted because wiring makes stick left robot right
 		Robot.driveTrain.arcadeDrive(xSpeed, zRotation);
 	}
 

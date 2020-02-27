@@ -30,10 +30,11 @@ public class IntakeCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean isPressed = OI.stick.getRawButtonPressed(3);
+    boolean isPressed = OI.stick.getRawButton(4);
     if(isPressed) {
-        Robot.intake.intake(0.3);
+        Robot.intake.intake(0.5);
     }
+    else Robot.intake.intake(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

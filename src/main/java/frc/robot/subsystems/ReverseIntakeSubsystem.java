@@ -14,7 +14,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class BallIntakeSubsystem extends Subsystem {
+public class ReverseIntakeSubsystem extends Subsystem {
   WPI_VictorSPX victorBallIntake; 
 
   // TODO: test to find if offsets are needed
@@ -23,11 +23,10 @@ public class BallIntakeSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public BallIntakeSubsystem() {
+  public ReverseIntakeSubsystem() {
     victorBallIntake = new WPI_VictorSPX(RobotMap.VICTORSPX_ballIntake);
 
-    // TODO: invert motor?
-    // victorBallIntake.setInverted(true);
+    victorBallIntake.setInverted(true);
   }
 
   public void intake(double speed) {

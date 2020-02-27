@@ -20,12 +20,12 @@ public class RobotMap {
     // public static int rightMotor = 2;
     
     // TODO change #s to specific motors
-	public static final int SPARK_driveLeftFront = 0;
-	public static final int SPARK_driveLeftBack = 0;
-	public static final int SPARK_driveRightFront = 9;
-	public static final int SPARK_driveRightBack = 9;
+	public static final int SPARK_driveLeftFront = 1;
+	public static final int SPARK_driveLeftBack = 1;
+	public static final int SPARK_driveRightFront = 2;
+	public static final int SPARK_driveRightBack = 2;
 
-	public static final int PWM_shooterAngle = 3;
+	public static final int PWM_shooterAngle = 0;
 
 	public static final int VICTORSPX_shooterRight = 0;
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
