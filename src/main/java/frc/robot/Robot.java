@@ -26,12 +26,12 @@ import frc.robot.subsystems.ShooterSubsystem;
 //import frc.robot.subsystems.BallShootingSubSystem;
 
 /*
- ____    ___      __     ___       __       _______.   .______    _______     _______.___________.   
-|___ \  |__ \    / /    / _ \     |  |     /       |   |   _  \  |   ____|   /       |           |   
-  __) |    ) |  / /_   | (_) |    |  |    |   (----`   |  |_)  | |  |__     |   (----`---|  |----`   
- |__ <    / /  | '_ \   > _ <     |  |     \   \       |   _  <  |   __|     \   \       |  |        
- ___) |  / /_  | (_) | | (_) |    |  | .----)   |      |  |_)  | |  |____.----)   |      |  |        
-|____/  |____|  \___/   \___/     |__| |_______/       |______/  |_______|_______/       |__|                 
+ ____    ___      __     ___       __      ______.   .______    _______     _______.___________.   
+|___ \  |__ \    / /    / _ \     |  |    /      |   |   _  \  |   ____|   /       |           |
+  __) |    ) |  / /_   | (_) |    |  |   |   (---`   |  |_)  | |  |__     |   (----`---|  |----`
+ |__ <    / /  | '_ \   > _ <     |  |    \   \      |   _  <  |   __|     \   \       |  | 
+ ___) |  / /_  | (_) | | (_) |    |  | .---)   |     |  |_)  | |  |____.----)   |      |  | 
+|____/  |____|  \___/   \___/     |__| |______/      |______/  |_______|_______/       |__|                 
               
 */
 
@@ -128,7 +128,8 @@ public class Robot extends TimedRobot {
 		arcadeDrive_command.start();
 		tilt_command.start();
 		shoot_command.start();
-		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
+		// ^ when in Teleop, have control over the tilting mechanism. 
+		// right now this assumes one talon on port 3
 		
 
 		// This makes sure that the autonomous stops running when
