@@ -15,11 +15,12 @@ import frc.robot.Robot;
 /**
  * -- pop! --
  */
-public class LoadCommand extends Command {
-  public LoadCommand() {
+public class ReverseIntakeCommand extends Command {
+  public ReverseIntakeCommand() {
     // Use requires() here to declare subsystem dependencies
     // change
-    requires(Robot.load);
+
+    // requires(Robot.reverse);
   }
 
   // Called just before this Command runs the first time
@@ -30,11 +31,13 @@ public class LoadCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean isPressed = OI.stick.getRawButton(6);
+    /*
+    boolean isPressed = OI.stick.getRawButton(7);
     if(isPressed) {
-        Robot.load.load(0.3);
+        Robot.reverse.intake(0.5);
     }
-    else Robot.load.load(0);
+    else Robot.reverse.intake(0);
+    */
   }
 
   // Make this return true when this Command no longer needs to run execute()

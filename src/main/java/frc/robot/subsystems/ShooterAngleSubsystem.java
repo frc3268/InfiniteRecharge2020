@@ -16,16 +16,17 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ShooterAngleSubsystem extends Subsystem {
 
   Talon Talon_angleShooter;
-  SpeedControllerGroup ControllerGroup_angleShooter;
+  // SpeedControllerGroup ControllerGroup_angleShooter;
 
   public ShooterAngleSubsystem() {
     Talon_angleShooter = new Talon(RobotMap.PWM_shooterAngle);
-    ControllerGroup_angleShooter = new SpeedControllerGroup(Talon_angleShooter);
+    // ControllerGroup_angleShooter = new SpeedControllerGroup(Talon_angleShooter);
   }
 
-  public void setSpeed(double speed) {
+  public void SetSpeed(double speed) {
     System.out.println(speed);
-    ControllerGroup_angleShooter.set(speed);
+    Talon_angleShooter.set(speed);
+    // ControllerGroup_angleShooter.set(speed);
   }
 
   @Override

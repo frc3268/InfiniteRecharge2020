@@ -55,6 +55,9 @@ public class Robot extends TimedRobot {
 	public static BallIntakeSubsystem intake = new BallIntakeSubsystem();
 	private IntakeCommand intake_command;
 
+	// public static ReverseIntakeSubsystem reverse = new ReverseIntakeSubsystem();
+	// private ReverseIntakeCommand reverse_command;
+
 	public static BallLoadSubsystem load = new BallLoadSubsystem();
 	private LoadCommand load_command;
 
@@ -70,6 +73,9 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI(); 
+
+		tilt_command = new TiltShooterCommand();
+		tilt_command.start();
 
 		/* Autonomous Initiation and Declaration */
 		m_chooser.setDefaultOption("No Auto", null);
@@ -128,11 +134,17 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 		arcadeDrive_command = new ArcadeDriveCommand();
-		//tilt_command = new TiltShooterCommand();
+		tilt_command = new TiltShooterCommand();
 		shoot_command = new ShooterCommand();
+		intake_command = new IntakeCommand();
+		// reverse_command = new ReverseIntakeCommand();
+		load_command = new LoadCommand();
 		arcadeDrive_command.start();
-		//tilt_command.start();
+		tilt_command.start();
 		shoot_command.start();
+		intake_command.start();
+		// reverse_command.start();
+		load_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
 
 

@@ -26,11 +26,22 @@ public class TiltShooterCommand extends Command {
   @Override
   protected void initialize() {
   }
-
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double slider = OI.TiltShooterSlider;
+    boolean tiltUp = OI.stick.getRawButton(5);
+    boolean tiltDown = OI.stick.getRawButton(3);
+
+    if (tiltUp) {
+      Robot.tilt.SetSpeed(0.3);
+      System.out.println("I'm tilting up!");
+    } else if (tiltDown) {
+      Robot.tilt.SetSpeed(-0.3);
+      System.out.println("I'm tilting down!");
+    } else {
+      Robot.tilt.SetSpeed(0);
+      System.out.println("NO TILT");
+    }
 
     //this block was to use buttons to 
     // boolean tilt_up = OI.stick.getRawButton(8);
@@ -46,11 +57,11 @@ public class TiltShooterCommand extends Command {
 
     //if slider in middle, transmit zero, if up transmit low, if down transmit high.
     // TODO Make this set to values and work with the buttons on the top of the stick (slider shouldn't define speed)
-    if (slider < 40) {
-      Robot.tilt.setSpeed(slider);
-    } else if (slider > 60) {
-      Robot.tilt.setSpeed(slider);
-    }
+    //if (slider < 40) {
+    //  Robot.tilt.setSpeed(slider);
+    //} else if (slider > 60) {
+    //  Robot.tilt.setSpeed(slider);
+    //}
   }
 
   // Make this return true when this Command no longer needs to run execute()
