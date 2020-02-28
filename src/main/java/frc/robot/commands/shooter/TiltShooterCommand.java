@@ -33,13 +33,13 @@ public class TiltShooterCommand extends Command {
     boolean tiltDown = OI.stick.getRawButton(3);
 
     if (tiltUp) {
-      Robot.tilt.setSpeed(0.1);
+      Robot.tilt.SetSpeed(0.3);
       System.out.println("I'm tilting up!");
     } else if (tiltDown) {
-      Robot.tilt.setSpeed(-0.1);
+      Robot.tilt.SetSpeed(-0.3);
       System.out.println("I'm tilting down!");
     } else {
-      Robot.tilt.setSpeed(0);
+      Robot.tilt.SetSpeed(0);
       System.out.println("NO TILT");
     }
 
