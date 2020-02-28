@@ -27,7 +27,7 @@ public class OI {
 	// Button button = new JoystickButton(stick, buttonNumber);
 
 	public static Joystick stick = new Joystick(RobotMap.JOYSTICK_PORT);
-	public static Joystick controller = new Joystick(RobotMap.CONTROLLER_PORT);
+	public static Joystick controller = new Joystick(RobotMap.BIG_CONTROLLER);
 
 	public static boolean triggerButton = stick.getRawButton(RobotMap.TRIGGER_BUTTON_ID);
 	public static boolean thumbButton = stick.getRawButton(RobotMap.THUMB_BUTTON_ID);

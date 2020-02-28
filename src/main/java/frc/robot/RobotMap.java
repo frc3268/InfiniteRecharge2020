@@ -31,7 +31,7 @@ public class RobotMap {
 	// --------------------------------------- OI ----------------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
 	public static final int JOYSTICK_PORT = 0;
-	public static final int CONTROLLER_PORT = 1;
+	public static final int BIG_CONTROLLER = 1;
 	public static final int SLIDER_AXIS_ID = 3;
 
 	public static final int Y_LINE_AXIS_ID = 0       /*fill in*/;
