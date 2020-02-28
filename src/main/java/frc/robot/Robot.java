@@ -46,8 +46,8 @@ public class Robot extends TimedRobot {
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
 	private ArcadeDriveCommand arcadeDrive_command;
 
-	public static ShooterAngleSubsystem tilt = new ShooterAngleSubsystem();
-	private TiltShooterCommand tilt_command;
+	public static TiltSubsystem tilt = new TiltSubsystem();
+	private TiltCommand tilt_command;
 
 	public static ShooterSubsystem shoot = new ShooterSubsystem();
 	private ShooterCommand shoot_command;
@@ -73,9 +73,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI(); 
-
-		tilt_command = new TiltShooterCommand();
-		tilt_command.start();
 
 		/* Autonomous Initiation and Declaration */
 		m_chooser.setDefaultOption("No Auto", null);
@@ -134,7 +131,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 		arcadeDrive_command = new ArcadeDriveCommand();
-		tilt_command = new TiltShooterCommand();
+		tilt_command = new TiltCommand();
 		shoot_command = new ShooterCommand();
 		intake_command = new IntakeCommand();
 		// reverse_command = new ReverseIntakeCommand();

@@ -25,7 +25,7 @@ public class RobotMap {
 	public static final int SPARK_driveRightFront = 2;
 	public static final int SPARK_driveRightBack = 2;
 
-	public static final int PWM_shooterAngle = 0;
+	public static final int PWM_shooterAngle = 4;
 
 	public static final int VICTORSPX_shooterRight = 0;
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
