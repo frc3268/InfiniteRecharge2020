@@ -13,7 +13,7 @@ import frc.robot.OI;
 import frc.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * Tilts the cannon.
  */
 public class TiltShooterCommand extends Command {
 
@@ -35,12 +35,12 @@ public class TiltShooterCommand extends Command {
     // TODO testing for that ^
     boolean up = OI.tiltUpButton;
     boolean down = OI.tiltDownButton;
-    double speed = 1;
+    double speed = 0.5;
 
     if (up) {
       Robot.tilt.setSpeed(speed);
     } else if (down) {
-      Robot.tilt.setSpeed(speed);
+      Robot.tilt.setSpeed(-1 * speed);
     } else {
       Robot.tilt.setSpeed(0);
     }

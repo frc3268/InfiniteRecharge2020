@@ -10,22 +10,19 @@ package frc.robot.subsystems;
 import frc.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ShooterAngleSubsystem extends Subsystem {
 
   Talon Talon_angleShooter;
-  SpeedControllerGroup ControllerGroup_angleShooter;
 
   public ShooterAngleSubsystem() {
     Talon_angleShooter = new Talon(RobotMap.PWM_shooterAngle);
-    ControllerGroup_angleShooter = new SpeedControllerGroup(Talon_angleShooter);
   }
 
   public void setSpeed(double speed) {
     System.out.println(speed);
-    ControllerGroup_angleShooter.set(speed);
+    Talon_angleShooter.set(speed);
   }
 
   @Override
