@@ -18,7 +18,7 @@ import frc.robot.Robot;
 public class ShooterCommand extends Command {
   public ShooterCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.shoot);
+    requires(Robot.tilt);
   }
 
   // Called just before this Command runs the first time

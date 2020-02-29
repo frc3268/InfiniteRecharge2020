@@ -39,12 +39,12 @@ public class TiltCommand extends Command {
     */
 
     if (tilt > 0) {
-      Robot.tilt.setSpeed(0.2);
+      Robot.tilt.SetSpeed(0.2);
     }
     else if (tilt < 0) {
-      Robot.tilt.setSpeed(-0.2);
+      Robot.tilt.SetSpeed(-0.2);
     }
-    else Robot.tilt.setSpeed(0);
+    else Robot.tilt.SetSpeed(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

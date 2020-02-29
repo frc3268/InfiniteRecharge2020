@@ -51,10 +51,14 @@ public class RobotMap {
 	public static final int SPARK_driveRightFront = 2;
 	public static final int SPARK_driveRightBack = 2;
 
+<<<<<<< HEAD
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// --------------------------------- SHOOTER ANGLER ----------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
 	public static final int PWM_shooterAngle = 4;
+=======
+	public static final int PWM_shooterAngle = 0;
+>>>>>>> parent of 557c263... Fix TiltShooter
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// --------------------------------- CLIMBER ----------------------------------- //
