@@ -14,7 +14,7 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class TiltSubsystem extends Subsystem {
+public class ClimbSubsystem extends Subsystem {
   
   Talon tilter_motor = new Talon(RobotMap.PWM_shooterAngle);
 
