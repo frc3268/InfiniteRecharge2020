@@ -74,6 +74,9 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		m_oi = new OI(); 
 
+		tilt_command = new TiltShooterCommand();
+		tilt_command.start();
+
 		/* Autonomous Initiation and Declaration */
 		m_chooser.setDefaultOption("No Auto", null);
 		m_chooser.addOption("TimedMovement", new TimedMovement());
