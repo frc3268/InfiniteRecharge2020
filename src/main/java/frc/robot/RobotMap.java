@@ -53,8 +53,6 @@ public class RobotMap {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// --------------------------------- SHOOTER ANGLER ----------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
-=======
->>>>>>> parent of 557c263... Fix TiltShooter
 	public static final int PWM_shooterAngle = 0;
 
 	public static final int VICTORSPX_shooterRight = 0;
