@@ -26,7 +26,7 @@ public class TiltCommand extends Command {
   protected void execute() {
     // boolean up = OI.stick.getRawButton(5);
     // boolean down = OI.stick.getRawButton(3);
-    double tilt = OI.stick.getRawAxis(3) * -0.2;
+    double tilt = OI.controller.getRawAxis(3) * -0.2;
 
     /*
     if (up) {

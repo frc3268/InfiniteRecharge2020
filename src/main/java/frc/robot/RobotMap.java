@@ -59,20 +59,14 @@ public class RobotMap {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// --------------------------------- CLIMBER ----------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
-	public static final int PWM_climber = 3;
+	// public static final int PWM_climber = 3;
 
 	public static final int VICTORSPX_shooterRight = 0;
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
 	public static final int VICTORSPX_shooterLeft = 1;
 
-
 	public static final int VICTORSPX_ballIntake = 2;
 	public static final int VICTORSPX_ballLoad = 3;
-
-	// declare buttons
-	public static final int ballShootingButton = 1;
-
-	public static final int tiltShooterButton = 3;
 
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:

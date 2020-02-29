@@ -26,6 +26,7 @@ public class OI {
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
 
+	
 	public static Joystick stick = new Joystick(RobotMap.JOYSTICK_PORT);
 	public static Joystick controller = new Joystick(RobotMap.BIG_CONTROLLER);
 

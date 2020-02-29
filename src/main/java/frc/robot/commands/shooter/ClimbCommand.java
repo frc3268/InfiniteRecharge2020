@@ -24,7 +24,11 @@ public class ClimbCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    
+    boolean isPressed = OI.stick.getRawButton(7);
+    if(isPressed) {
+        Robot.climb.setSpeed(0.5);
+    }
+    else Robot.climb.setSpeed(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
