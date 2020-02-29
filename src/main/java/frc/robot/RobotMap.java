@@ -22,8 +22,6 @@ public class RobotMap {
     
     // TODO change #s to specific motors
 
-
-
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module.
 
@@ -55,7 +53,6 @@ public class RobotMap {
 	// --------------------------------- SHOOTER ANGLER ----------------------------------- //
 	//////////////////////////////////////////////////////////////////////////////////////////
 	public static final int PWM_shooterAngle = 0;
-
 
 	public static final int VICTORSPX_shooterRight = 0;
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
