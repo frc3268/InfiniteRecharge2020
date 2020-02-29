@@ -61,9 +61,6 @@ public class Robot extends TimedRobot {
 	public static BallLoadSubsystem load = new BallLoadSubsystem();
 	private LoadCommand load_command;
 
-	public static ClimbSubsystem climb = new ClimbSubsystem();
-	private ClimbCommand climb_command;
-
 	public static OI m_oi;
 
 	Command m_autoCommand;
@@ -142,14 +139,12 @@ public class Robot extends TimedRobot {
 		intake_command = new IntakeCommand();
 		// reverse_command = new ReverseIntakeCommand();
 		load_command = new LoadCommand();
-		climb_command = new ClimbCommand();
 		arcadeDrive_command.start();
 		tilt_command.start();
 		shoot_command.start();
 		intake_command.start();
 		// reverse_command.start();
 		load_command.start();
-		climb_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
 
 
