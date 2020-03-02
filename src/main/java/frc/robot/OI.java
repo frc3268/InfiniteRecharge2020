@@ -8,6 +8,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.shooter.*;
+import frc.robot.commands.tilt.*;
+import frc.robot.commands.intake.*;
+import frc.robot.commands.load.*;
+import frc.robot.commands.climber.*;
 // import edu.wpi.first.wpilibj.buttons.Button;
 // import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -30,12 +37,21 @@ public class OI {
 	public static Joystick stick = new Joystick(RobotMap.JOYSTICK_PORT);
 	public static Joystick controller = new Joystick(RobotMap.BIG_CONTROLLER);
 
-	public static boolean triggerButton = stick.getRawButton(RobotMap.TRIGGER_BUTTON_ID);
-	public static boolean thumbButton = stick.getRawButton(RobotMap.THUMB_BUTTON_ID);
+	public static Button tiltUpButton = new JoystickButton(controller, RobotMap.TILTUP);
+	public static Button tiltDownButton = new JoystickButton(controller, RobotMap.TILTDOWN);
 
-	public static double tiltShooterSlider = stick.getRawAxis(RobotMap.SLIDER_AXIS_ID);
-	public static boolean tiltDownButton = stick.getRawButton(RobotMap.STICK_LEFT_UPPER_BUTTON_ID);
-	public static boolean tiltUpButton = stick.getRawButton(RobotMap.STICK_LEFT_LOWER_BUTTON_ID);
+	public static Button panelButton = new JoystickButton(controller, RobotMap.PANEL);
+
+	public static Button shootButton = new JoystickButton(controller, RobotMap.SHOOTER);
+
+	public static Button shootLoadButton = new JoystickButton(controller, RobotMap.SHOOTLOAD);
+
+	public static Button intakeButton = new JoystickButton(controller, RobotMap.INTAKE);
+	public static Button reverseIntakeButton = new JoystickButton(controller, RobotMap.REVERSEINTAKE);
+	public static Button loadButton = new JoystickButton(controller, RobotMap.LOAD);
+
+	public static Button climbButton = new JoystickButton(controller, RobotMap.CLIMB);
+	public static Button reverseClimbButton = new JoystickButton(controller, RobotMap.REVERSECLIMB);
 
 	// public static double TiltShooterSlider = stick.getTwist();
 	// public static double TiltShooterSlider = stick.getThrottle();
@@ -55,11 +71,40 @@ public class OI {
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
 	// button.whileHeld(new ExampleCommand());
+	
 
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 	public OI() {
+		panelButton.whenPressed(new ControlPanelCommand());
+		panelButton.whenReleased(new ControlPanelStopCommand());
 
+		shootButton.whenPressed(new ShooterCommand());
+		shootButton.whenReleased(new ShooterStopCommand());
+
+		intakeButton.whenPressed(new IntakeCommand());
+		intakeButton.whenReleased(new IntakeStopCommand());
+
+		loadButton.whenPressed(new LoadCommand());
+		loadButton.whenReleased(new LoadStopCommand());
+
+		shootLoadButton.whenPressed(new ShootLoadCommand());
+		shootLoadButton.whenReleased(new ShootLoadStopCommand());
+
+		tiltUpButton.whenPressed(new TiltUpCommand());
+		tiltUpButton.whenReleased(new TiltStopCommand());
+
+		tiltDownButton.whenPressed(new TiltDownCommand());
+		tiltDownButton.whenReleased(new TiltStopCommand());
+
+		climbButton.whenPressed(new ClimbCommand());
+		climbButton.whenReleased(new ClimbStopCommand());
+
+		reverseClimbButton.whenPressed(new ReverseClimbCommand());
+		reverseClimbButton.whenReleased(new ReverseClimbStopCommand());
+
+		reverseIntakeButton.whenPressed(new ReverseIntakeCommand());
+		reverseIntakeButton.whenReleased(new ReverseIntakeStopCommand());
 	}
 }

@@ -10,14 +10,14 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.controller.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.shooter.ShooterCommand;
+import frc.robot.commands.shooter.ControlPanelCommand;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 /**
  * Subsystem for the motors that actually shoot the ball.
  */
-public class ShooterSubsystem extends Subsystem {
+public class ControlPanelSubsystem extends Subsystem {
   WPI_VictorSPX victorShooter_l;
   WPI_VictorSPX victorShooter_r;
 
@@ -26,14 +26,14 @@ public class ShooterSubsystem extends Subsystem {
   /**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
   private final double R__PERCENT_OFFSET = 1;
 
-  public ShooterSubsystem() {
+  public ControlPanelSubsystem() {
     victorShooter_r = new WPI_VictorSPX(RobotMap.VICTORSPX_shooterRight);
     victorShooter_l = new WPI_VictorSPX(RobotMap.VICTORSPX_shooterLeft);
   }
 
-  public void shoot(double speed) {
+  public void panel(double speed) {
+    victorShooter_l.setInverted(false);
     System.out.println("Shooting... [" + speed + "," + L__PERCENT_OFFSET + "," + R__PERCENT_OFFSET + "]");
-    victorShooter_l.setInverted(true);
     victorShooter_l.set(speed * L__PERCENT_OFFSET);
     victorShooter_r.set(speed * R__PERCENT_OFFSET);
   }

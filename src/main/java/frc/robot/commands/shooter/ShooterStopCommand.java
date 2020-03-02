@@ -15,8 +15,8 @@ import frc.robot.Robot;
 /**
  * -- pop! --
  */
-public class ShooterCommand extends Command {
-  public ShooterCommand() {
+public class ShooterStopCommand extends Command {
+  public ShooterStopCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.shoot);
   }
@@ -41,7 +41,7 @@ public class ShooterCommand extends Command {
     }
     */
 
-    Robot.shoot.shoot(0.75);
+    Robot.shoot.shoot(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

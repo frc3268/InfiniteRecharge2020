@@ -30,16 +30,22 @@ public class RobotMap {
 	//////////////////////////////////////////////////////////////////////////////////////////
 	public static final int JOYSTICK_PORT = 0;
 	public static final int BIG_CONTROLLER = 1;
-	public static final int SLIDER_AXIS_ID = 3;
 
-	public static final int Y_LINE_AXIS_ID = 0       /*fill in*/;
-	public static final int X_LINE_AXIS_ID = 0       /*fill in*/;
-	public static final int Z_ROTATIONAL_AXIS_ID = 0 /*fill in*/;
+	// public static final int Y_LINE_AXIS_ID = 0       /*fill in*/;
+	// public static final int X_LINE_AXIS_ID = 0       /*fill in*/;
+	// public static final int Z_ROTATIONAL_AXIS_ID = 0 /*fill in*/;
 
-	public static final int TRIGGER_BUTTON_ID = 1;
-	public static final int THUMB_BUTTON_ID = 2;
-	public static final int STICK_LEFT_UPPER_BUTTON_ID = 3;
-	public static final int STICK_LEFT_LOWER_BUTTON_ID = 5;
+	public static final int PANEL = 2;
+	public static final int SHOOTER = 7;
+	public static final int INTAKE = 5;
+	public static final int LOAD = 10;
+	public static final int TILTUP = 3;
+	public static final int TILTDOWN = 1;
+	public static final int CLIMB = 11;	
+	public static final int REVERSECLIMB = 12;
+	public static final int REVERSEINTAKE = 6;
+
+	public static final int SHOOTLOAD = 9;
 
 	//////////////////////////////////////////////////////////////////////////////////////////
 	// ------------------------------------- DRIVE ---------------------------------------- //
@@ -49,11 +55,14 @@ public class RobotMap {
 	public static final int SPARK_driveRightFront = 2;
 	public static final int SPARK_driveRightBack = 2;
 
-	public static final int PWM_shooterAngle = 0;
+	public static final int PWM_shooterAngle = 4;
+	public static final int PWM_climb = 5;
 
 	public static final int VICTORSPX_shooterRight = 0;
+	public static final int VICTORSPX_shooterLeft = 1;
 	// VICTORSPX_shooterRight refers to the shooter with the '3' Sticker on it
 	public static final int VICTORSPX_ballIntake = 2;
+	public static final int VICTORSPX_ballLoad = 3;
 	// If you are using multiple modules, make sure to define both the port
 	// public static int rangefinderModule = 1;
 
@@ -61,4 +70,7 @@ public class RobotMap {
 	public static final double L__PERCENT_OFFSET = 1;
 	/**Positive double - (0,1] - that defines a hardcoded offset because we don't have the PID yet... */
 	public static final double R__PERCENT_OFFSET = 1;
+
+	// BUTTONS THAT ARE TAKEN
+	// 1 2 4 6 5 3
 }

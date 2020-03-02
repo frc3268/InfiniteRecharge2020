@@ -5,22 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.shooter;
+package frc.robot.commands.climber;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.OI;
 import frc.robot.Robot;
 
 
-/**
- * -- pop! --
- */
-public class ReverseIntakeCommand extends Command {
-  public ReverseIntakeCommand() {
+public class ClimbCommand extends Command {
+  public ClimbCommand() {
     // Use requires() here to declare subsystem dependencies
-    // change
-
-    // requires(Robot.reverse);
+    requires(Robot.climb);
   }
 
   // Called just before this Command runs the first time
@@ -31,13 +25,8 @@ public class ReverseIntakeCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    /*
-    boolean isPressed = OI.stick.getRawButton(7);
-    if(isPressed) {
-        Robot.reverse.intake(0.5);
-    }
-    else Robot.reverse.intake(0);
-    */
+    // boolean isPressed = OI.stick.getRawButton(7);
+    Robot.climb.setSpeed(1);
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -1,24 +1,19 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.shooter;
+package frc.robot.commands.tilt;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
 
-
-/**
- * -- pop! --
- */
-public class ShooterCommand extends Command {
-  public ShooterCommand() {
-    // Use requires() here to declare subsystem dependencies
-    requires(Robot.shoot);
+public class TiltUpCommand extends Command {
+  public TiltUpCommand() {
+    requires(Robot.tilt);
   }
 
   // Called just before this Command runs the first time
@@ -29,19 +24,21 @@ public class ShooterCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
     /*
-    boolean trigger = OI.stick.getRawButton(1);
-    if (trigger) {
-      Robot.shoot.shoot(.75);
-    }
-    boolean thumb = OI.stick.getRawButton(2);
-    if (thumb) {
-      Robot.shoot.shoot(0);
+    boolean up = OI.stick.getRawButton(5);
+    boolean down = OI.stick.getRawButton(3);
+
+    if (up) {
+      Robot.tilt.setSpeed(0.2);
+    } else if (down) {
+      Robot.tilt.setSpeed(-0.2);
+    } else {
+      Robot.tilt.setSpeed(0);
     }
     */
 
-    Robot.shoot.shoot(0.75);
+    
+    Robot.tilt.setSpeed(0.35);
   }
 
   // Make this return true when this Command no longer needs to run execute()

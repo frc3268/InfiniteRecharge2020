@@ -5,21 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.shooter;
+package frc.robot.commands.intake;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
 
 
-/**
- * -- pop! --
- */
-public class LoadCommand extends Command {
-  public LoadCommand() {
-    // Use requires() here to declare subsystem dependencies
-    // change
-    requires(Robot.load);
+public class ReverseIntakeStopCommand extends Command {
+  public ReverseIntakeStopCommand() {
+    requires(Robot.intake);
   }
 
   // Called just before this Command runs the first time
@@ -30,11 +25,7 @@ public class LoadCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    boolean isPressed = OI.stick.getRawButton(6);
-    if(isPressed) {
-        Robot.load.load(0.3);
-    }
-    else Robot.load.load(0);
+    Robot.intake.intake(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

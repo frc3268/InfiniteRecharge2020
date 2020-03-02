@@ -46,20 +46,25 @@ public class Robot extends TimedRobot {
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
 	private ArcadeDriveCommand arcadeDrive_command;
 
-	public static ShooterAngleSubsystem tilt = new ShooterAngleSubsystem();
-	private TiltShooterCommand tilt_command;
+	public static TiltSubsystem tilt = new TiltSubsystem();
+//	private TiltCommand tilt_command;
 
 	public static ShooterSubsystem shoot = new ShooterSubsystem();
-	private ShooterCommand shoot_command;
+//	private ShooterCommand shoot_command;
 
 	public static BallIntakeSubsystem intake = new BallIntakeSubsystem();
-	private IntakeCommand intake_command;
+//	private IntakeCommand intake_command;
+
+	public static ClimbSubsystem climb = new ClimbSubsystem();
 
 	// public static ReverseIntakeSubsystem reverse = new ReverseIntakeSubsystem();
 	// private ReverseIntakeCommand reverse_command;
 
 	public static BallLoadSubsystem load = new BallLoadSubsystem();
-	private LoadCommand load_command;
+//	private LoadCommand load_command;
+
+	public static ControlPanelSubsystem panel = new ControlPanelSubsystem();
+//	private ControlPanelCommand panel_command;
 
 	public static OI m_oi;
 
@@ -73,9 +78,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI(); 
-
-		tilt_command = new TiltShooterCommand();
-		tilt_command.start();
 
 		/* Autonomous Initiation and Declaration */
 		m_chooser.setDefaultOption("No Auto", null);
@@ -114,7 +116,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autoCommand = m_chooser.getSelected();
+		// m_autoCommand = m_chooser.getSelected();
 		m_autoCommand = new TimedMovement();
 
 		// schedule the autonomous command (example)
@@ -134,18 +136,22 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopInit() {
 		arcadeDrive_command = new ArcadeDriveCommand();
-		tilt_command = new TiltShooterCommand();
-		shoot_command = new ShooterCommand();
-		intake_command = new IntakeCommand();
+		// tilt_command = new TiltCommand();
+		// shoot_command = new ShooterCommand();
+		// intake_command = new IntakeCommand();
 		// reverse_command = new ReverseIntakeCommand();
-		load_command = new LoadCommand();
+		// load_command = new LoadCommand();
+		// panel_command = new ControlPanelCommand();
 		arcadeDrive_command.start();
-		tilt_command.start();
-		shoot_command.start();
-		intake_command.start();
+		// tilt_command.start();
+		// shoot_command.start();
+		// intake_command.start();
 		// reverse_command.start();
-		load_command.start();
+		// load_command.start();
+		// panel_command.start();
 		// ^ when in Teleop, have control over the tilting mechanism. right now this assumes one talon on port 3
+
+		System.out.println(OI.stick.getRawAxis(2));
 
 
 		// This makes sure that the autonomous stops running when
